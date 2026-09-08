@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA Store</title>
+  <meta name="description" content="NOVA Store - moderne online webshop">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#home">NOVA<span>.</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">Over ons</a>
+      <button class="cart-button" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div>
+        <p class="eyebrow">NIEUW • ONLINE STORE</p>
+        <h1>Shop simpel.<br><span>Shop NOVA.</span></h1>
+        <p class="hero-text">Ontdek onze geselecteerde producten. Modern, overzichtelijk en zonder gedoe.</p>
+        <a class="primary" href="#shop">Bekijk collectie →</a>
+      </div>
+      <div class="hero-card">
+        <div class="orb"></div>
+        <p>NOVA COLLECTION</p>
+        <strong>2026</strong>
+      </div>
+    </section>
+
+    <section id="shop" class="shop">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">COLLECTIE</p>
+          <h2>Onze producten</h2>
+        </div>
+        <input id="search" type="search" placeholder="Zoek producten..." oninput="renderProducts()">
+      </div>
+      <div id="products" class="grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <p class="eyebrow">OVER NOVA</p>
+      <h2>Een webshop die met jou meegroeit.</h2>
+      <p>Dit is een volledig statische webshop: hij kan gratis gehost worden op GitHub Pages, Cloudflare Pages, Netlify of Vercel. Je kunt producten, prijzen en teksten eenvoudig aanpassen in <code>script.js</code>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">NOVA<span>.</span></div>
+    <p>© 2026 NOVA Store</p>
+  </footer>
+
+  <div id="cartOverlay" class="overlay hidden" onclick="closeCart(event)">
+    <aside class="cart" onclick="event.stopPropagation()">
+      <div class="cart-head">
+        <h2>Winkelmandje</h2>
+        <button onclick="closeCart()">✕</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="cart-total">
+        <span>Totaal</span><strong id="cartTotal">€0,00</strong>
+      </div>
+      <button class="primary full" onclick="checkout()">Bestellen</button>
+      <p class="small">De checkout is voorbereid als demo. Voor echte betalingen moet je later een betaalprovider koppelen.</p>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
